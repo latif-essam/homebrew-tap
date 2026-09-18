@@ -5,13 +5,15 @@
 class AppDevClean < Formula
   desc "Cross-platform dev-cache cleaner (RN/Expo/Flutter/native)"
   homepage "https://github.com/latif-essam/app-dev-clean"
-  version "0.1.0"
+  version "0.2.0"
   license "MIT"
+
+  depends_on "git"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/latif-essam/app-dev-clean/releases/download/v0.1.0/app-dev-clean_darwin_amd64.tar.gz"
-      sha256 "15fffe9a9dc7b1f6fbbb3b1e93cc64dd7f161a9e121736ce25c9d3fead03a916"
+      url "https://github.com/latif-essam/app-dev-clean/releases/download/v0.2.0/app-dev-clean_darwin_amd64.tar.gz"
+      sha256 "a44cbad2ca833e229ab40ea363c7078594eea85ce18356a4a195afd8f7c35ece"
 
       define_method(:install) do
         bin.install "app-dev-clean"
@@ -19,8 +21,8 @@ class AppDevClean < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/latif-essam/app-dev-clean/releases/download/v0.1.0/app-dev-clean_darwin_arm64.tar.gz"
-      sha256 "b4cf7a3d6ea49dcea9cc1bfcd78df833d5a0ef4aa4bbee23bc72fff178d898f0"
+      url "https://github.com/latif-essam/app-dev-clean/releases/download/v0.2.0/app-dev-clean_darwin_arm64.tar.gz"
+      sha256 "8dca8ed19456306206da9c049a22b49e7b1da458ff12f1825b8aec8056c50968"
 
       define_method(:install) do
         bin.install "app-dev-clean"
@@ -31,16 +33,16 @@ class AppDevClean < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/latif-essam/app-dev-clean/releases/download/v0.1.0/app-dev-clean_linux_amd64.tar.gz"
-      sha256 "be95c9d05480db60bb3e464857325008e542f68ea57582c5f7289ec53cdc45c7"
+      url "https://github.com/latif-essam/app-dev-clean/releases/download/v0.2.0/app-dev-clean_linux_amd64.tar.gz"
+      sha256 "938bc1dbb3515b2fcbd33883e4af6af7ae0bca3d1507224f683aa1f976a6d65f"
       define_method(:install) do
         bin.install "app-dev-clean"
         bin.install_symlink "app-dev-clean" => "adc"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/latif-essam/app-dev-clean/releases/download/v0.1.0/app-dev-clean_linux_arm64.tar.gz"
-      sha256 "1955465eecffa4ef3cae7c78ef62244f996fd675f56b871f66e69e9fb724b27a"
+      url "https://github.com/latif-essam/app-dev-clean/releases/download/v0.2.0/app-dev-clean_linux_arm64.tar.gz"
+      sha256 "97cd7b30868b4420390c0992ba67789c8c952e956999f7aae4da6ddcad118b1c"
       define_method(:install) do
         bin.install "app-dev-clean"
         bin.install_symlink "app-dev-clean" => "adc"
